@@ -1,0 +1,150 @@
+/* Custom Properties สำหรับ Dark Fantasy Theme */
+:root {
+    --bg-dark: #050a0f; /* ดำอมน้ำเงิน */
+    --accent-blue: #0a2647; /* น้ำเงินเข้ม */
+    --gold: #c5a358; /* ทอง */
+    --text-light: #e0e6ed;
+    --urgent: #ff4d4d; /* แดงสำหรับ Deadline */
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    text-align: center;
+}
+
+/* 1. Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, var(--accent-blue), var(--bg-dark));
+    text-align: center;
+}
+.brand-name { font-size: 4rem; margin-bottom: 0; letter-spacing: 5px; }
+.media-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #111;
+    border: 2px dashed var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* ปุ่ม CTA */
+.btn-cta {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.pulse { animation: pulse-animation 2s infinite; }
+@keyframes pulse-animation {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 163, 88, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(197, 163, 88, 0); }
+    100% { transform: scale(1); }
+}
+
+/* 2. Reviews */
+.review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.review-card {
+    background: #0d1621;
+    padding: 20px;
+    border-left: 4px solid var(--gold);
+}
+.review-img { height: 150px; background: #1a2a3a; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+/* 4. Features */
+.features-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.feature-item { background: #0d1621; padding: 15px; border-radius: 8px; }
+.feature-item span { color: var(--gold); font-weight: bold; margin-right: 15px; }
+
+/* 5 & 6. Promotion & Deadline */
+.promo-box {
+    border: 2px solid var(--gold);
+    padding: 40px;
+    text-align: center;
+    background: rgba(10, 38, 71, 0.5);
+    border-radius: 20px;
+}
+.pricing { margin: 20px 0; }
+.old-price { text-decoration: line-through; margin-right: 15px; opacity: 0.6; }
+.new-price { font-size: 3rem; color: var(--gold); font-weight: bold; }
+#countdown { font-size: 3rem; color: var(--urgent); font-weight: bold; font-family: monospace; }
+
+.urgent-text { color: var(--urgent); font-size: 0.9rem; margin-top: 15px; }
+
+/* Footer */
+.footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.5; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .review-grid { grid-template-columns: 1fr; }
+    .brand-name { font-size: 2.5rem; }
+}
+
+/* คลาสกลางสำหรับควบคุมรูปภาพทุกรูปในหน้าเว็บ */
+.responsive-img {
+    max-width: 100%;  /* รูปจะไม่กว้างเกินกรอบที่มันอยู่ */
+    height: auto;     /* ปรับความสูงตามสัดส่วนกว้างเพื่อไม่ให้รูปเบี้ยว */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* เพิ่มความละมุนให้ขอบรูป */
+}
+
+/* ปรับแต่งกรอบรูปภาพหลัก (Hero) */
+.main-visual {
+    width: 100%;
+    max-width: 800px; /* คุมความกว้างสูงสุดไม่ให้ใหญ่เกินไปในจอคอม */
+    margin: 30px auto;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 20px rgba(197, 163, 88, 0.3);
+    overflow: hidden;
+}
+
+/* ปรับแต่งกรอบรูปรีวิว */
+.review-img-holder {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ปรับแต่งกรอบรูปส่วน Solution */
+.solution-img-holder {
+    flex: 1;
+    min-width: 300px;
+    margin-top: 20px;
+}
+
+/* ปรับ layout ส่วน solution ให้ยืดหยุ่น */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* ถ้ารูปใหญ่ไปในมือถือ มันจะหล่นลงมาข้างล่างอัตโนมัติ */
+    gap: 30px;
+    align-items: center;
+}
+
+.text-block {
+    flex: 1;
+    min-width: 300px;
+}

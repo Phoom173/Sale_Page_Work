@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menabrew | The Enchanted Brew</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="brand-name">MENABREW</h1>
+            <p class="tagline">"รสสัมผัสแห่งเวทมนตร์ ในทุกหยดที่คุณดื่ม"</p>
+            
+            <div class="main-visual">
+                <img src="2.jpg" alt="Menabrew Hero" class="responsive-img">
+            </div>
+
+            <a href="#order" class="btn-cta pulse">อัญเชิญเครื่องดื่มของคุณ</a>
+        </div>
+    </header>
+
+    <section class="review-section">
+        <div class="container">
+            <h2 class="section-title">เสียงจากผู้ร่วมเดินทาง</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="review-img-holder">
+                        <img src="1.jpg" alt="Review 1" class="responsive-img">
+                    </div>
+                    <p>"เหมือนได้เติม Mana ให้ร่างกาย รสชาติลึกลับและอร่อยมาก"</p>
+                    <span>- จอมเวทสายคาเฟอีน</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-img-holder">
+                        <img src="3.jpg" alt="Review 2" class="responsive-img">
+                    </div>
+                    <p>"บรรจุภัณฑ์สวยเหมือนหลุดมาจากนิยาย แนะนำเลยครับ"</p>
+                    <span>- นักเดินทางนิรนาม</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">สยบความเหนื่อยล้าด้วยมนตราแห่งรสชาติ</h2>
+            <div class="content-wrapper">
+                <div class="text-block">
+                    <p>โลกความจริงที่แสนวุ่นวายอาจทำให้พลังชีวิตของคุณลดน้อยลง Menabrew ถูกปรุงขึ้นมาเพื่อเป็น 'Potion' ลับที่ช่วยกู้คืนพลังงาน ปลุกความสดชื่น และเปลี่ยนช่วงเวลาพักผ่อนให้กลายเป็นโลกแห่งจินตนาการ</p>
+                </div>
+                <div class="solution-img-holder">
+                    <img src="4.jpg" alt="Solution" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">5 มนตราลับใน Menabrew</h2>
+            <div class="features-list">
+                <div class="feature-item"><span>01</span> วัตถุดิบหายากจากหุบเขาลึกลับ</div>
+                <div class="feature-item"><span>02</span> กรรมวิธีการสกัดเย็นแบบโบราณ</div>
+                <div class="feature-item"><span>03</span> รสสัมผัสที่เปลี่ยนไปตามอุณหภูมิ</div>
+                <div class="feature-item"><span>04</span> ปราศจากสารเจือปนที่เป็นพิษ</div>
+                <div class="feature-item"><span>05</span> บรรจุภัณฑ์ที่เก็บกักกลิ่นหอมได้ยาวนาน</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="promo-section">
+        <div class="container">
+            <div class="promo-box">
+                <h2 class="promo-title">ข้อเสนอพิเศษจากหีบสมบัติ!</h2>
+                <h2 class="promo-title">เมนูกาแฟทุกชนิดในร้าน! จากราคาปกติแก้วละ</h2>
+                <div class="pricing">
+                    <span class="old-price">ปกติ 50.-</span>
+                    <span class="new-price">เพียง 40.-</span>
+                </div>
+                
+                <div class="deadline-container">
+                    <p>มนตรานี้จะเสื่อมสลายในอีก:</p>
+                    <div id="countdown">04:00:00</div>
+                </div>
+
+                <button class="btn-cta gold-btn">สั่งซื้อตอนนี้ก่อนข้อเสนอจะหายไป</button>
+                <p class="urgent-text">* จำกัดเพียง 50 ท่านแรกของวันเท่านั้น</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Menabrew Fantasy Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let time = 14400;
+        const display = document.querySelector('#countdown');
+        setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+            display.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            if (time > 0) time--;
+        }, 1000);
+    </script>
+</body>
+</html>
